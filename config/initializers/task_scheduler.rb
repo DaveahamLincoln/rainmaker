@@ -21,7 +21,7 @@ blockcount = 1
     puts blockcount 
     response = HTTParty.get('https://blockchain.info/latestblock')
     if response["time"] > time_index
-      time_index = response.time
+      time_index = response["time"]
       blockcount +=1
     end
     #waits 15 mins

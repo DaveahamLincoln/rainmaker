@@ -3,20 +3,10 @@ class Ticket < ActiveRecord::Base
 
   def validate
     if $deadline < Time.now
-      puts 'deadline failure'
       return false
     else
       client = Snooby::Client.new
       response = client.user(self.username).about['created']
-      puts response
-      puts response
-      puts response
-      puts response
-      puts response
-      puts response
-      puts response
-      puts response
-      puts response
       if response > 1416365304
         return false
       else
