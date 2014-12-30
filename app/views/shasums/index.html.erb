@@ -1,0 +1,24 @@
+<h1>Listing shasums</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sum</th>
+      <th></th>
+      <th>Created At</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shasums.each do |shasum| %>
+      <tr>
+        <td><%= shasum.sum %></td>
+        <td></td>
+        <td><%= shasum.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
