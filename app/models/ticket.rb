@@ -1,20 +1,26 @@
 class Ticket < ActiveRecord::Base
+  validates_uniqueness_of :username, case_sensitive: false
+
   def validate
     if $deadline < Time.now
+      puts 'deadline failure'
       return false
     else
-      if Ticket.count(username: self.username) > 1
+      client = Snooby::Client.new
+      response = client.user(self.username).about['created']
+      puts response
+      puts response
+      puts response
+      puts response
+      puts response
+      puts response
+      puts response
+      puts response
+      puts response
+      if response > 1416365304
         return false
       else
-        #client = Redd::Client::OAuth2.new("ThmHqzn9SjCz0g", "48JxXaLg1L3sxV8imZGez4ZWlNg", "http://www.example.com/unused/redirect/uri")
-        client = Snooby::Client.new
-        response = client.user(self.username).about['created']
-        logger.info response
-        if response > 1416365304
-          return false
-        else
-          return true
-        end
+        return true
       end
     end
   end

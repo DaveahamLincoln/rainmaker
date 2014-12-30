@@ -43,3 +43,5 @@ gem 'bootstra386-rails'
 gem 'snooby'
 
 gem 'rufus-scheduler'
+
+gem 'httparty'
